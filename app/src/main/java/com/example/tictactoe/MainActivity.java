@@ -36,11 +36,21 @@ public class MainActivity extends AppCompatActivity {
            showName.setText(" Ayush vs Atul ");
         celebration = findViewById(R.id.celebration);
         celebration.setAnimation(R.raw.celebration);
+        restart = findViewById(R.id.Restart);
 
 //        animation = findViewById(R.id.animation);         this three line not working
 //        Animation translate  = AnimationUtils.loadAnimation(this , R.anim.translate);
 //        animation.startAnimation(translate);
+
+        restart.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                restart();
+            }
+        });
     }
+
 
 
     private void init() {
@@ -53,16 +63,13 @@ public class MainActivity extends AppCompatActivity {
         button7 = findViewById(R.id.button7);
         button8 = findViewById(R.id.button8);
         button9 = findViewById(R.id.button9);
-        restart=  findViewById(R.id.Restart);
-
-
     }
+
+
 
     public void Check(View parameter) {    // user defined method and parameter
 
         Button currentBtn = (Button) parameter;
-        if(currentBtn.equals(restart))restart();
-
         count++;
         if(currentBtn.getText().toString().equals("")){  //checking if already exist value on the button
 
@@ -75,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             flag = 0;
         }
 
-        if (count > 4) {
+        if (count > 1) {
             btn1 = button1.getText().toString();
             btn2 = button2.getText().toString();
             btn3 = button3.getText().toString();
